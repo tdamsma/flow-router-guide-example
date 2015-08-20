@@ -1,3 +1,6 @@
+
+Meteor.subscribe('allPosts');
+
 MainLayout = React.createClass({
   render() {
     return <div>
@@ -12,9 +15,10 @@ BlogHome = React.createClass({
   render() {
     return <div>
       <p>This is the home page of our blog</p>
-      <p>
-        <a href="/hello-world">See Hello World Post</a>
-      </p>
+      <ul>
+        <li><a href="/hello-world">See Hello World Post</a></li>
+        <li><a href="/hello-world2">See Hello World Post2</a></li>
+      </ul>
     </div>;
   }
 });
@@ -39,7 +43,7 @@ BlogPost = React.createClass({
   render() {
     return <div>
       <a href="/">Back</a>
-      {this.data.post? this.getContent() : <p>Loading...</p>}
+      {Posts.findOne({_id: this.props.postId})}
     </div>
   }
 });
