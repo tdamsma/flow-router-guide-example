@@ -30,15 +30,9 @@ BlogPost = React.createClass({
     var postId = this.props.postId;
     var handle = Meteor.subscribe('singlePost', postId);
     if(handle.ready()) {
-      data.post = Posts.findOne({_id: postId});
+      this.render()
     }
     return data;
-  },
-  getContent() {
-    return <div>
-      <h3>{this.data.post.title}</h3>
-      <p>{this.data.post.content}</p>
-    </div>;
   },
   render() {
     return <div>
