@@ -9,3 +9,5 @@ react
 kadira:flow-router
 kadira:react-layout
 meteorhacks:subs-manager
+digilord:faker
+ground:db
